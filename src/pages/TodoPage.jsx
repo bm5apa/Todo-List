@@ -1,4 +1,5 @@
 import { Footer, Header, TodoCollection, TodoInput } from 'components';
+import { useState } from 'react';
 
 const dummyTodos = [
   {
@@ -24,15 +25,107 @@ const dummyTodos = [
 ];
 
 const TodoPage = () => {
+  const [inputValue, setInputValue] = useState('');
+  const [todos, setTodos] = useState(dummyTodos);
+  const handleInput = (value) => {
+    setInputValue(value);
+  };
+  const handleTodo = () => {
+    if (inputValue.length === 0) {
+      return;
+    }
+    setTodos((prevTodos) => {
+      return [
+        ...prevTodos,
+        {
+          id: Math.random() * 100,
+          title: inputValue,
+          isDone: false,
+        },
+      ];
+    });
+    setInputValue('');
+  };
+
+  const handleKeyDown = () => {
+    if (inputValue.length === 0) {
+      return;
+    }
+    setTodos((prevTodos) => {
+      return [
+        ...prevTodos,
+        {
+          id: Math.random() * 100,
+          title: inputValue,
+          isDone: false,
+        },
+      ];
+    });
+    setInputValue('');
+  };
+
+  const handleChangeMode = ({ id, isEdit }) => {
+    setTodos((prevTodos) => {
+      return prevTodos.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            isEdit,
+          };
+        }
+        return { ...todo, isEdit: false };
+      });
+    });
+  };
+
+  const handleToggleDone = (id) => {
+    setTodos((prevTodos) => {
+      return prevTodos.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            isDone: !todo.isDone,
+          };
+        }
+        return todo;
+      });
+    });
+  };
+
+  const handleSave = ({ id, title }) => {
+    setTodos((prevTodos) => {
+      return prevTodos.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            id,
+            title,
+            isEdit: false,
+          };
+        }
+        return todo;
+      });
+    });
+  };
+
   return (
     <div>
       TodoPage
       <Header />
-      <TodoInput />
-      <TodoCollection />
+      <TodoInput
+        inputValue={inputValue}
+        onChange={handleInput}
+        onAddTodo={handleTodo}
+        onKeyDown={handleKeyDown}
+      />
+      <TodoCollection
+        todos={todos}
+        onSave={handleSave}
+        onToggleDone={handleToggleDone}
+        onChangeMode={handleChangeMode}
+      />
       <Footer />
     </div>
   );
 };
-
 export default TodoPage;
