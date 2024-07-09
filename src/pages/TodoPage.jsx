@@ -30,6 +30,7 @@ const TodoPage = () => {
   const handleInput = (value) => {
     setInputValue(value);
   };
+
   const handleTodo = () => {
     if (inputValue.length === 0) {
       return;
@@ -108,6 +109,15 @@ const TodoPage = () => {
     });
   };
 
+  const handleDelete = (id) => {
+    setTodos((prevTodos) => {
+      return prevTodos.filter((todo) => todo.id !== id);
+    });
+  };
+
+  const itemCount = todos.length;
+  console.log('itemCountForTodoPage', itemCount);
+
   return (
     <div>
       TodoPage
@@ -123,8 +133,9 @@ const TodoPage = () => {
         onSave={handleSave}
         onToggleDone={handleToggleDone}
         onChangeMode={handleChangeMode}
+        onDelete={handleDelete}
       />
-      <Footer />
+      <Footer itemCount={itemCount} />
     </div>
   );
 };
