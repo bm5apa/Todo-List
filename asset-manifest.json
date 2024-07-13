@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/bm5apa/Todo-List/static/css/main.eea957d8.chunk.css",
+    "main.js": "/bm5apa/Todo-List/static/js/main.f8b7018d.chunk.js",
+    "main.js.map": "/bm5apa/Todo-List/static/js/main.f8b7018d.chunk.js.map",
+    "runtime-main.js": "/bm5apa/Todo-List/static/js/runtime-main.94f09824.js",
+    "runtime-main.js.map": "/bm5apa/Todo-List/static/js/runtime-main.94f09824.js.map",
+    "static/js/2.308725e1.chunk.js": "/bm5apa/Todo-List/static/js/2.308725e1.chunk.js",
+    "static/js/2.308725e1.chunk.js.map": "/bm5apa/Todo-List/static/js/2.308725e1.chunk.js.map",
+    "static/js/3.45320453.chunk.js": "/bm5apa/Todo-List/static/js/3.45320453.chunk.js",
+    "static/js/3.45320453.chunk.js.map": "/bm5apa/Todo-List/static/js/3.45320453.chunk.js.map",
+    "index.html": "/bm5apa/Todo-List/index.html",
+    "static/css/main.eea957d8.chunk.css.map": "/bm5apa/Todo-List/static/css/main.eea957d8.chunk.css.map",
+    "static/js/2.308725e1.chunk.js.LICENSE.txt": "/bm5apa/Todo-List/static/js/2.308725e1.chunk.js.LICENSE.txt",
+    "static/media/ac-logo.eea79863.svg": "/bm5apa/Todo-List/static/media/ac-logo.eea79863.svg",
+    "static/media/check-active.680985db.svg": "/bm5apa/Todo-List/static/media/check-active.680985db.svg",
+    "static/media/check-circle.ad8591fd.svg": "/bm5apa/Todo-List/static/media/check-circle.ad8591fd.svg",
+    "static/media/check-hover.f1b1bcfd.svg": "/bm5apa/Todo-List/static/media/check-hover.f1b1bcfd.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.94f09824.js",
+    "static/js/2.308725e1.chunk.js",
+    "static/css/main.eea957d8.chunk.css",
+    "static/js/main.f8b7018d.chunk.js"
+  ]
+}
